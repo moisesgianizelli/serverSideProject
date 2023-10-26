@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<% include partials/head %>
+    <div class="wrapper">
+        <h1><%= title %></h1>
+        <div class="ra-r"></div>
+        <body>
+
+            <div style="margin:0 auto ; width:50%; padding:20px">
+              <form action="/pizzas/create" method="post">
+              <label>Name</label>
+              <input type="text" name="name">
+                <br /> <br /> <br /> <br />
+              <label>Description</label>
+              <input type="text" name="description">
+                <br /> <br /> <br /> <br />
+                <label>Customer</label>
+              <input type="text" name="customer">
+                <br /> <br /> <br /> <br />
+              <button>submit</button>
+                </form>
+              </div>
+            </body>
+    </div>
+</div>
+    <% include partials/foot %>
+
+</html>
