@@ -14,6 +14,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-family: Nunito;
+  background-image: url(../images/bgmusic.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 a {
   text-decoration: none;
@@ -32,6 +36,7 @@ header {
   margin-left: auto;
   margin-right: auto;
 }
+
 li {
   float: left;
   line-height: 52px;
@@ -50,9 +55,9 @@ a:hover {
   color: #333;
 }
 a.logo {
-  background: url(../images/pizzalogo.png) no-repeat center center / cover;
+  background: url(../images/musiclogo3.png) no-repeat center center / cover;
   color: transparent;
-  width: 95px;
+  width: 38px;
   height: 37px;
   margin: 7px 0;
   float: left;
@@ -139,7 +144,6 @@ a.add-b {
   font-weight: 400;
 }
 .sh-c {
-  background: url(../images/makeyourown.png) no-repeat center 14px / 20px;
   color: transparent;
   height: 52px;
   display: block;
@@ -170,7 +174,6 @@ a.thumb-pr {
 .thumb-pr.mn {
   width: 520px;
   float: left;
-  background: url(../images/StandardPizza.png) no-repeat center center / cover;
   color: white;
   /* line-height: 650px; */
   height: 480px;
@@ -221,11 +224,12 @@ p {
   width: 29%;
   padding: 4px 20px;
 }
-.artists-list > a {
-}
+/* .artists-list > a {
+} */
 .container {
   overflow: auto;
   margin-top: 40px;
+  
 }
 a.sh-c:hover {
   color: transparent;
@@ -283,4 +287,103 @@ a.sh-c:hover {
   text-align: right;
   color: white;
   width: 100%;
+}
+
+.workshop-description {
+  background-color: rgba(240, 240, 240, 0.8); 
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 500px;
+}
+
+/* Style the title */
+.workshop-description h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Style the description text */
+.workshop-description p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Style the Join Now button */
+.btn-join-workshop {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-join-workshop:hover {
+  background-color: #0056b3;
+}
+
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #333; /* Adjust the background color as needed */
+  color: #fff; /* Adjust text color as needed */
+  padding: 10px;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Add this CSS to your project's styles.css or a new CSS file */
+
+/* Add this CSS to your project's styles.css or a new CSS file */
+
+.form-container {
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(245, 245, 245, 0.8); /* Adjust the alpha (fourth value) to control transparency */
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.form-button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-button:hover {
+  background-color: #0056b3;
 }

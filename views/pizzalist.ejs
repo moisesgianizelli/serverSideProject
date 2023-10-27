@@ -1,35 +1,44 @@
 <!DOCTYPE html>
 <html>
-    
-    <div class="wrapper">
-        <h1><%= title %></h1>
-        <body>
-            <table class="table table-inverse">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Customer</th>
 
-      </tr>
-    </thead>
+<div class="wrapper">
+  <h1>
+    <%= title %>
+  </h1>
 
-    <tbody>
-      <% for(var i=0; i < pizzalist.length; i++) { %>
-     <tr>
+  <body>
+    <table class="table table-inverse">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Customer</th>
 
-       <td><%= pizzalist[i].name %></td>
-       <td><%= pizzalist[i].description %></td>
-       <td><%= pizzalist[i].customer %></td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% for(var i=0; i < pizzalist.length; i++) { %>
+          <tr>
+
+            <td>
+              <%= pizzalist[i].name %>
+            </td>
+            <td>
+              <%= pizzalist[i].description %>
+            </td>
+            <td>
+              <%= pizzalist[i].customer %>
+            </td>
 
 
-     </tr>
-  <% } %>
-    </tbody>
+          </tr>
+          <% } %>
+      </tbody>
 
-  </table>
+    </table>
 
-</body>
+  </body>
 </div>
 <% include partials/foot %>
 

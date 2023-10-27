@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html>
 <% include partials/head %>
-    <div class="wrapper">
-        <h1><%= title %></h1>
-        <div class="ra-r"></div>
-        <body>
+  <div class="wrapper">
+    <h1>
+      <%= title %>
+    </h1>
+    <div class="ra-r"></div>
 
-            <div style="margin:0 auto ; width:50%; padding:20px">
-              <form action="/pizzas/create" method="post">
-              <label>Name</label>
-              <input type="text" name="name">
-                <br /> <br /> <br /> <br />
-              <label>Description</label>
-              <input type="text" name="description">
-                <br /> <br /> <br /> <br />
-                <label>Customer</label>
-              <input type="text" name="customer">
-                <br /> <br /> <br /> <br />
-              <button>submit</button>
-                </form>
-              </div>
-            </body>
-    </div>
-</div>
-    <% include partials/foot %>
+    <body>
+      <div class="form-container">
+        <form action="/pizzas/create" method="post">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-input" id="name" name="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" class="form-input" id="description" name="description" required>
+          </div>
+
+          <div class="form-group">
+            <label for="customer">Customer</label>
+            <input type="text" class="form-input" id="customer" name="customer" required>
+          </div>
+
+          <button type="submit" class="form-button">Submit</button>
+        </form>
+      </div>
+    </body>
+  </div>
+  <% include partials/foot %>
 
 </html>
