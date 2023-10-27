@@ -152,7 +152,6 @@ a.add-b {
 }
 h1 {
   font-size: 3em;
-  margin-top: 30px;
 }
 a.thumb-pr {
   display: block;
@@ -386,4 +385,28 @@ label {
 
 .form-button:hover {
   background-color: #0056b3;
+}
+
+.table-container {
+  max-height: 200px; /* Set a maximum height for the container */
+  overflow-y: auto; /* Add a vertical scroll when content exceeds the height */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+thead {
+  background-color: #f2f2f2;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
 }

@@ -1,45 +1,48 @@
 <!DOCTYPE html>
 <html>
 
-<div class="wrapper">
-  <h1>
+<head>
+  <title>
     <%= title %>
-  </h1>
+  </title>
+  <% include partials/head %>
+</head>
 
-  <body>
-    <table class="table table-inverse">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Description</th>
-          <th>Customer</th>
-
-        </tr>
-      </thead>
-
-      <tbody>
-        <% for(var i=0; i < pizzalist.length; i++) { %>
+<body>
+  <div class="wrapper">
+    <h1>
+      <%= title %>
+    </h1>
+    <div class="table-container">
+      <table class="table table-inverse">
+        <thead>
           <tr>
-
-            <td>
-              <%= pizzalist[i].name %>
-            </td>
-            <td>
-              <%= pizzalist[i].description %>
-            </td>
-            <td>
-              <%= pizzalist[i].customer %>
-            </td>
-
-
+            <th>Name</th>
+            <th>Description</th>
+            <th>Customer</th>
           </tr>
-          <% } %>
-      </tbody>
+        </thead>
 
-    </table>
+        <tbody>
+          <% for (var i=0; i < pizzalist.length; i++) { %>
+            <tr>
+              <td>
+                <%= pizzalist[i].name %>
+              </td>
+              <td>
+                <%= pizzalist[i].description %>
+              </td>
+              <td>
+                <%= pizzalist[i].customer %>
+              </td>
+            </tr>
+            <% } %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
-  </body>
-</div>
-<% include partials/foot %>
+  <% include partials/foot %>
+</body>
 
 </html>
