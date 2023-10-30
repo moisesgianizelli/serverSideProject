@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html>
 
-<% include partials/head %>
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <% include partials/head %>
+</head>
+
+<body>
   <div class="wrapper">
     <h1>
       <%= title %>
     </h1>
-    <div class="ra-r"></div>
-
-    <body>
+    <div class="table-container">
       <table class="table table-inverse">
         <thead>
           <tr>
             <th>Name</th>
             <th>Description</th>
             <th>Customer</th>
-
           </tr>
         </thead>
 
         <tbody>
-          <% for(var i=0; i < pizzalist.length; i++) { %>
+          <% for (var i=0; i < pizzalist.length; i++) { %>
             <tr>
-
               <td>
                 <%= pizzalist[i].name %>
               </td>
@@ -32,17 +35,14 @@
               <td>
                 <%= pizzalist[i].customer %>
               </td>
-
-
             </tr>
             <% } %>
         </tbody>
-
       </table>
+    </div>
+  </div>
 
-    </body>
-  </div>
-  </div>
   <% include partials/foot %>
+</body>
 
 </html>
