@@ -4,16 +4,16 @@ const mongoose = require('mongoose');
 
 const pizzas = require('../models/pizza');
 
-const pizzaRouter = express.Router();
+const musicRouter = express.Router();
 
-pizzaRouter
+musicRouter
   .route('/')
   .get((req, res, next) => {})
   .post((req, res, next) => {})
   .put((req, res, next) => {})
   .delete((req, res, next) => {});
 
-pizzaRouter
+musicRouter
   .route('/create')
   .get((req, res, next) => {
     res.render('newpizza.ejs', { title: 'Event' });
@@ -52,4 +52,4 @@ pizzaRouter
     res.end('Delete operation not  supported on /pizzas/creste');
   });
 
-module.exports = pizzaRouter;
+module.exports = musicRouter;

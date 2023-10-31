@@ -6,7 +6,7 @@ var logger = require('morgan');
 var mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
-var pizzaRouter = require('./routes/pizzaRouter');
+var musicRouter = require('./routes/musicRouter');
 
 var app = express();
 
@@ -32,7 +32,7 @@ connect.then(
 );
 
 app.use('/', indexRouter);
-app.use('/pizzas', pizzaRouter);
+app.use('/pizzas', musicRouter);
 
 app.use(function (req, res, next) {
   next(createError(404));
