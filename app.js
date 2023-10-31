@@ -32,7 +32,7 @@ connect.then(
 );
 
 app.use('/', indexRouter);
-app.use('/pizzas', musicRouter);
+app.use('/bookings', musicRouter);
 
 app.use(function (req, res, next) {
   next(createError(404));

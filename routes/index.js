@@ -6,7 +6,7 @@ router.get('/', function (req, res, next) {
   res.render('index', { title: 'MUSIC WORKSHOP' });
 });
 
-router.get('/pizzas/create', function (req, res, next) {
+router.get('/bookings/create', function (req, res, next) {
   res.render('newguest', { title: 'Booking' });
 });
 

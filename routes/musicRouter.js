@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-const pizzas = require('../models/pizza');
+const bookings = require('../models/pizza');
 
 const musicRouter = express.Router();
 
@@ -20,11 +20,11 @@ musicRouter
   })
 
   .post((req, res, next) => {
-    pizzas
+    bookings
       .create(req.body)
       .then(
         (pizzacreated) => {
-          pizzas
+          bookings
             .find()
             .then(
               (pizzasfound) => {
@@ -44,12 +44,12 @@ musicRouter
 
   .put((req, res, next) => {
     res.statusCode = 403;
-    res.end('PUT operation not supported on /pizzas/create');
+    res.end('PUT operation not supported on /bookings/create');
   })
 
   .delete((req, res, next) => {
     res.statusCode = 403;
-    res.end('Delete operation not  supported on /pizzas/creste');
+    res.end('Delete operation not  supported on /bookings/creste');
   });
 
 module.exports = musicRouter;
