@@ -30,7 +30,7 @@ musicRouter
               (bookingsfound) => {
                 res.render('guestList', {
                   bookinglist: bookingsfound,
-                  title: 'List of guest',
+                  title: 'List of guests',
                 });
               },
               (err) => next(err),
