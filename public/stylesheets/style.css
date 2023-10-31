@@ -342,14 +342,10 @@ footer p {
   margin: 0;
 }
 
-/* Add this CSS to your project's styles.css or a new CSS file */
-
-/* Add this CSS to your project's styles.css or a new CSS file */
-
 .form-container {
-  max-width: 50%;
+  max-width: 60%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 25px;
   background-color: rgba(245, 245, 245, 0.8); /* Adjust the alpha (fourth value) to control transparency */
   border-radius: 10px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
@@ -366,7 +362,7 @@ label {
 
 .form-input {
   width: 100%;
-  padding: 10px;
+  padding: 7px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #fff;
@@ -388,8 +384,8 @@ label {
 }
 
 .table-container {
-  max-height: 500px; /* Set a maximum height for the container */
-  overflow-y: auto; /* Add a vertical scroll when content exceeds the height */
+  max-height: 500px; 
+  overflow-y: auto; 
 }
 
 table {

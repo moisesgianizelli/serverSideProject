@@ -14,7 +14,7 @@ var pizzaSchemaful = new Schema(
       type: String,
       required: true,
     },
-    customer: {
+    hourToAttend: {
       type: String,
       required: true,
     },
