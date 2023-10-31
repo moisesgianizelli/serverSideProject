@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-const url = 'mongodb://localhost:27017/pizzashop';
+const url = 'mongodb://localhost:27017/bookingshop';
 const connect = mongoose.connect(url);
 
 connect.then(

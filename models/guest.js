@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 require('mongoose-currency').loadType(mongoose);
 var Currency = mongoose.Types.Currency;
 
-var pizzaSchemaful = new Schema(
+var bookingSchemaful = new Schema(
   {
     name: {
       type: String,
@@ -23,6 +23,6 @@ var pizzaSchemaful = new Schema(
     timestamps: true,
   },
 );
-var bookings = mongoose.model('Booking', pizzaSchemaful);
+var bookings = mongoose.model('Booking', bookingSchemaful);
 
 module.exports = bookings;

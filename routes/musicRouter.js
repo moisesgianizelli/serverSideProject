@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-const bookings = require('../models/pizza');
+const bookings = require('../models/guest');
 
 const musicRouter = express.Router();
 
@@ -16,20 +16,20 @@ musicRouter
 musicRouter
   .route('/create')
   .get((req, res, next) => {
-    res.render('newpizza.ejs', { title: 'Event' });
+    res.render('newbooking.ejs', { title: 'Event' });
   })
 
   .post((req, res, next) => {
     bookings
       .create(req.body)
       .then(
-        (pizzacreated) => {
+        (bookingcreated) => {
           bookings
             .find()
             .then(
-              (pizzasfound) => {
+              (bookingsfound) => {
                 res.render('guestList', {
-                  pizzalist: pizzasfound,
+                  bookinglist: bookingsfound,
                   title: 'List of guest',
                 });
               },
