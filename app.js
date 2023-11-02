@@ -34,6 +34,14 @@ connect.then(
 app.use('/', indexRouter);
 app.use('/bookings', musicRouter);
 
+app.get('/about', (req, res) => {
+  res.render('about', { title: 'About the Music Workshop' });
+});
+
+app.get('/help', (req, res) => {
+  res.render('help', { title: 'Help page' });
+});
+
 app.use(function (req, res, next) {
   next(createError(404));
 });

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <% include partials/head %>
+</head>
+
+<body>
+
+
+  <div class="about-description">
+    <h2>About the Music Workshop</h2>
+    <p>Welcome to our Music Workshop! We are passionate about music and dedicated to nurturing musical talent in our community. We aim to inspire, educate, and empower individuals to explore their musical potential.</p>
+
+    <h2>What We Offer</h2>
+    <ul class="feature-cards">
+      <li>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <img src="images/guitar.png" alt="Instrument Icon">
+          </div>
+          <h3>Learn to Play Instruments</h3>
+        </div>
+      </li>
+      <li>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <img src="images/group.png" alt="Instrument Icon">
+          </div>
+          <h3>Group music classes</h3>
+        </div>
+      </li>
+      <li>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <img src="images/music.png" alt="Instrument Icon">
+          </div>
+          <h3>Create your own music</h3>
+        </div>
+      </li>
+    </ul>
+
+    <h2>Join Us!</h2>
+    <p>Whether you're a beginner or an experienced musician, our workshop welcomes all who share our love for music.</p>
+    <button class="btn-join-workshop"><a href="/bookings/create">Booking</a></button>
+  </div>
+
+  <% include partials/foot %>
+</body>
+
+</html>

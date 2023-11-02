@@ -9,6 +9,9 @@ router.get('/', function (req, res, next) {
 router.get('/bookings/create', function (req, res, next) {
   res.render('newguest', { title: 'Booking' });
 });
+// router.get('/about', function (req, res, next) {
+//   res.render('about', { title: 'About' });
+// });
 
 module.exports = router;
 
