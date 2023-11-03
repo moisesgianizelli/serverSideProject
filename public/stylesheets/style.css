@@ -99,7 +99,8 @@ a.logo {
 .nav-item.active .sub-menu {
   display: block;
 }
-ul.nv-l {
+
+ul.nav {
   float: left;
   margin-left: 20px;
 }

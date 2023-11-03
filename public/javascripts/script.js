@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const manageBookingNavItem = document.querySelector('.nav-item');
-  const subMenu = manageBookingNavItem.querySelector('.sub-menu');
+  const manageBookingLink = document.getElementById('manage-booking-link');
+  const subMenu = manageBookingLink.nextElementSibling;
 
-  manageBookingNavItem.addEventListener('click', function (event) {
+  manageBookingLink.addEventListener('click', function (event) {
     event.preventDefault();
 
     if (subMenu.style.display === 'block') {
