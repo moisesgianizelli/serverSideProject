@@ -1,0 +1,29 @@
+<!-- userReportForm.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Report</title>
+</head>
+
+<body>
+  <h1>User Report</h1>
+  <form method="post" action="/reports/user">
+    <!-- Form fields for user report input -->
+    <!-- Example: -->
+    <label for="userName">User Name:</label>
+    <input type="text" id="userName" name="userName">
+
+    <label for="startDate">Start Date:</label>
+    <input type="date" id="startDate" name="startDate">
+
+    <label for="endDate">End Date:</label>
+    <input type="date" id="endDate" name="endDate">
+
+    <button type="submit">Generate Report</button>
+  </form>
+</body>
+
+</html>

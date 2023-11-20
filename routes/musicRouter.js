@@ -13,6 +13,34 @@ musicRouter
   .put((req, res, next) => {})
   .delete((req, res, next) => {});
 
+musicRouter.get('/bookings/:id/edit', (req, res, next) => {
+  const bookingId = req.params.id;
+  res.render('editBooking', { title: 'Edit Booking', bookingId });
+});
+
+musicRouter.post('/bookings/:id/edit', (req, res, next) => {
+  res.redirect('/bookings');
+});
+
+musicRouter.get('/reports/user', (req, res, next) => {
+  res.render('userReportForm', { title: 'User Report' });
+});
+
+musicRouter.post('/reports/user', async (req, res, next) => {
+  try {
+    const userName = req.body.userName;
+    const startDate = req.body.startDate;
+    const endDate = req.body.endDate;
+
+    const bookingsData = await getBookingsForUser(userName, startDate, endDate);
+
+    res.render('userReport', { userName, bookings: bookingsData });
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+});
+
 musicRouter
   .route('/create')
   .get((req, res, next) => {
