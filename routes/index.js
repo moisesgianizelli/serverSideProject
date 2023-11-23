@@ -14,5 +14,3 @@ router.get('/bookings/create', function (req, res, next) {
 // });
 
 module.exports = router;
-
-// check how to clean up the data and put in a different page.
