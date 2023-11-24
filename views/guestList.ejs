@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
 
+<!-- <script>
+  // Redirect to "/thanks" after a delay (e.g., 3 seconds)
+  setTimeout(() => {
+    window.location.href = '/thanks';
+  }, 3000); // Adjust the delay as needed
+</script> -->
+
 <head>
   <title>
     <%= title %>
@@ -21,6 +28,7 @@
             <th>Description</th>
             <th>Time</th>
             <th>Date</th>
+            <th>Control</th>
           </tr>
         </thead>
 
@@ -39,11 +47,20 @@
               <td>
                 <%= bookinglist[i].date %>
               </td>
+              <td>
+                <form action="/bookings/update/<%= bookinglist[i]._id %>" method="put">
+                  <button class="btn-delete" type="submit">Update</button>
+                </form>
+                <form action="/bookings/delete/<%= bookinglist[i]._id %>" method="get">
+                  <button class="btn-delete" type="submit">Delete</button>
+                </form>
+              </td>
             </tr>
             <% } %>
         </tbody>
       </table>
     </div>
+    <button class="btn-join-workshop"><a href="/bookings/report">Report</a></button>
   </div>
 
   <% include partials/foot %>

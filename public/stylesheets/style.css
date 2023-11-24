@@ -452,6 +452,23 @@ label {
   overflow-y: auto; 
 }
 
+.btn-delete{
+  background-color:darkgrey;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 70px;
+  height: 30px;
+  margin-right: 5px;
+}
+.btn-delete:hover {
+  background-color: #c82333;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;

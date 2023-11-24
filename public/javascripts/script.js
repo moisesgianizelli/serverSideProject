@@ -12,3 +12,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+function confirmDelete() {
+  // Display a confirmation dialog
+  var confirmation = window.confirm(
+    'Are you sure you want to delete this booking?',
+  );
+
+  // If the user confirms, submit the form
+}

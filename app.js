@@ -42,6 +42,10 @@ app.get('/help', (req, res) => {
   res.render('help', { title: 'Help page' });
 });
 
+app.get('/thanks', (req, res) => {
+  res.render('thanks', { title: 'Thank you' });
+});
+
 app.use(function (req, res, next) {
   next(createError(404));
 });
