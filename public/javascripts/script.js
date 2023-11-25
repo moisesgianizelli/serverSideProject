@@ -13,10 +13,20 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 function confirmDelete() {
-  // Display a confirmation dialog
   var confirmation = window.confirm(
     'Are you sure you want to delete this booking?',
   );
+}
 
-  // If the user confirms, submit the form
+function validateForm() {
+  var selectedDate = new Date(document.getElementById('date').value);
+  var today = new Date();
+  selectedDate.setUTCHours(0, 0, 0, 0);
+  today.setUTCHours(0, 0, 0, 0);
+
+  if (selectedDate < today) {
+    alert('Selected date must be today or later.');
+    return false;
+  }
+  return true;
 }

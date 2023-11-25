@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<script src="javascripts/script.js"></script>
 <% include partials/head %>
   <div class="wrapper">
     <h1>
@@ -8,20 +9,26 @@
 
     <body>
       <div class="form-container">
-        <form action="/bookings/create" method="post">
-          <div class="form-group">
+        <form id="bookingForm" action="/bookings/create" method="post" onsubmit="return validateForm()">
+
+          <div class=" form-group">
             <label for="name">Name</label>
             <input type="text" class="form-input" id="name" name="name" required>
           </div>
 
           <div class="form-group">
             <label for="description">Description</label>
-            <input type="text" class="form-input" id="description" name="description" required>
+            <select type="text" class="form-input-drop" id="description" name="description" required>
+              <option value="teacher">Teacher</option>
+              <option value="student">Student</option>
+              <option value="instructor">Instructor</option>
+              <option value="evening">audience</option>
+            </select>
           </div>
 
           <div class="form-group">
             <label for="hourToAttend">Time</label>
-            <select class="form-input" id="hourToAttend" name="hourToAttend" required>
+            <select class="form-input-drop" id="hourToAttend" name="hourToAttend" required>
               <option value="morning">Morning</option>
               <option value="afternoon">Afternoon</option>
               <option value="evening">Evening</option>
@@ -30,7 +37,7 @@
 
           <div class="form-group">
             <label for="description">Date</label>
-            <input type="text" class="form-input" id="date" name="date" required>
+            <input type="date" class="form-input" id="date" name="date" required>
           </div>
 
           <button type="submit" class="form-button">Submit</button>
