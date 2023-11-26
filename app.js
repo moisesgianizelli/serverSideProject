@@ -12,7 +12,7 @@ var app = express();
 var favicon = require('serve-favicon');
 var path = require('path');
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(favicon(path.join(__dirname, 'public', 'favicon2.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -24,6 +24,7 @@ app.use(cookieParser());
 
 const url = 'mongodb://localhost:27017/bookingshop';
 const connect = mongoose.connect(url);
+authMiddleware = require('./routes/authMiddleware');
 
 connect.then(
   (db) => {
@@ -33,7 +34,6 @@ connect.then(
     console.log(err);
   },
 );
-
 app.use('/', indexRouter);
 app.use('/bookings', musicRouter);
 app.use('/bookings/create', musicRouter);

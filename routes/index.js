@@ -1,11 +1,29 @@
 var express = require('express');
 var router = express.Router();
-
 const bookings = require('../models/guest');
 const getTotalBookings = async () => {
   const totalBookings = await bookings.countDocuments();
   return totalBookings;
 };
+
+const basicAuth = require('basic-auth');
+
+const users = {
+  admin: '1234',
+};
+
+const authMiddleware = () => {
+  return (req, res, next) => {
+    const user = basicAuth(req);
+    if (!user || !users[user.name] || users[user.name] !== user.pass) {
+      res.set('WWW-Authenticate', 'Basic realm=Authorization Required');
+      return res.status(401).send('Unauthorized Access!');
+    }
+    next();
+  };
+};
+
+module.exports = authMiddleware;
 
 const getMostCommonDate = async () => {
   const mostCommonDate = await bookings.aggregate([
@@ -67,7 +85,7 @@ router.get('/bookings/update', (req, res, next) => {
   res.render('updateForm', { title: 'Updating' });
 });
 
-router.get('/bookings/report', async (req, res, next) => {
+router.get('/bookings/report', authMiddleware(), async (req, res, next) => {
   try {
     const totalBookings = await getTotalBookings();
     const mostCommonDate = await getMostCommonDate();
@@ -84,7 +102,7 @@ router.get('/bookings/report', async (req, res, next) => {
   }
 });
 
-router.get('/bookings/guestList', (req, res, next) => {
+router.get('/bookings/guestList', authMiddleware(), (req, res, next) => {
   bookings
     .find({})
     .then((bookingsfound) => {
