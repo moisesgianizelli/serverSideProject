@@ -41,11 +41,6 @@ header {
   flex: 1;
 }
 
-.dropdown {
-  display: inline-block;
-  position: relative;
-}
-
 button{
   border:none;
   border-radius:5px;
@@ -72,7 +67,6 @@ li a {
   padding: 0 10px;
 }
 a:hover {
-  /* background: #f9f9f9f9; */
   color: #333;
 }
 a.logo {
@@ -130,40 +124,7 @@ ul.nv {
   overflow: auto;
   margin-top: 20px;
 }
-.rt-b {
-  float: left;
-  width: 22%;
-  background: white;
-  border-radius: 5px;
-  min-height: 630px;
-  margin: 0 0 20px 20px;
-}
-.rt-b img {
-  display: block;
-  max-width: 100%;
-  width: 100%;
-  border-radius: 5px 5px 0 0;
-  height: auto;
-}
-a.rt-href {
-  display: block;
-  position: relative;
-}
-.rt-b h1 {
-  padding: 15px 15px 5px 15px;
-  font-size: 15px;
-  margin: 0;
-}
-.pr-t {
-  padding: 0 15px;
-  color: #1C76C8;
-  font-weight: 600;
-}
-.rt-b p {
-  color: #777;
-  max-height: 94px;
-  padding: 10px 15px 10px 15px;
-}
+
 a.add-b {
   background: #1174CB;
   color: white;
@@ -254,7 +215,6 @@ a.sh-c:hover {
 
 .dropdown-content a:hover {/*background-color: rgba(255, 255, 255, 0.05);*/color: #fff;/* color: rgba(0, 0, 0, 1); */}
 .dropdown-arrow {
-  /* content: ""; */
   position: absolute;
   bottom: 100%;
   left: 225px;
@@ -263,21 +223,6 @@ a.sh-c:hover {
   border-top-width: 0;
   height: 0;
   width: 0;
-}
-.art-cart {
-  color: white;
-  display: block;
-  line-height: initial;
-  height: max-content;
-  overflow: auto;
-}
-.fr {
-  /* background: red; */
-  float: right;
-  display: block;
-  text-align: right;
-  color: white;
-  width: 100%;
 }
 .about-description {
   background-color: rgba(240, 240, 240, 0.8);
@@ -355,8 +300,6 @@ a.sh-c:hover {
 .faq-question:hover + .faq-answer {
   display: block;
 }
-
-
 
 .workshop-description {
   background-color: rgba(240, 240, 240, 0.8); 

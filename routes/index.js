@@ -73,10 +73,6 @@ router.get('/bookings/create', function (req, res, next) {
   res.render('newguest', { title: 'Booking' });
 });
 
-router.get('/bookings/manage', (req, res, next) => {
-  res.render('manage', { title: 'Manage your booking' });
-});
-
 router.get('/bookings/delete', (req, res, next) => {
   res.render('deleteConfirmation', { title: 'Deletion' });
 });
