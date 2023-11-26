@@ -52,10 +52,7 @@ musicRouter
 musicRouter
   .route('/delete/:bookingId')
   .get((req, res, next) => {
-    // This could render a confirmation page or perform any other necessary logic
     const bookingId = req.params.bookingId;
-
-    // Fetch the booking by ID from the database and render a confirmation page
     bookings
       .findById(bookingId)
       .then(
@@ -76,7 +73,7 @@ musicRouter
       .then(
         (response) => {
           console.log('Booking deleted:', response);
-          res.redirect('/bookings/guestList'); // Redirect to the guestList page after deletion
+          res.redirect('/bookings/guestList');
         },
         (err) => next(err),
       )

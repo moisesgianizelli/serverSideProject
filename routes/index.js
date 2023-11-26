@@ -7,6 +7,45 @@ const getTotalBookings = async () => {
   return totalBookings;
 };
 
+const getMostCommonDate = async () => {
+  const mostCommonDate = await bookings.aggregate([
+    {
+      $group: {
+        _id: '$date',
+        count: { $sum: 1 },
+      },
+    },
+    { $sort: { count: -1 } },
+    { $limit: 1 },
+  ]);
+
+  return mostCommonDate.length > 0 ? mostCommonDate[0]._id : 'N/A';
+};
+
+const getMostCommonDescription = async () => {
+  const mostCommonDescription = await bookings.aggregate([
+    {
+      $group: {
+        _id: '$description',
+        count: { $sum: 1 },
+      },
+    },
+    { $sort: { count: -1 } },
+    { $limit: 1 },
+  ]);
+
+  return mostCommonDescription.length > 0
+    ? mostCommonDescription[0]._id
+    : 'N/A';
+};
+
+module.exports = {
+  bookings,
+  getTotalBookings,
+  getMostCommonDate,
+  getMostCommonDescription,
+};
+
 /* GET home page. */
 router.get('/', function (req, res, next) {
   res.render('index', { title: 'MUSIC WORKSHOP' });
@@ -27,11 +66,19 @@ router.get('/bookings/delete', (req, res, next) => {
 router.get('/bookings/update', (req, res, next) => {
   res.render('updateForm', { title: 'Updating' });
 });
-// check the const upthere
+
 router.get('/bookings/report', async (req, res, next) => {
   try {
     const totalBookings = await getTotalBookings();
-    res.render('report', { title: 'Report', totalBookings });
+    const mostCommonDate = await getMostCommonDate();
+    const mostCommonDescription = await getMostCommonDescription();
+
+    res.render('report', {
+      title: 'Report',
+      totalBookings,
+      mostCommonDate,
+      mostCommonDescription,
+    });
   } catch (err) {
     next(err);
   }

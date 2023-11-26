@@ -9,6 +9,10 @@ var indexRouter = require('./routes/index');
 var musicRouter = require('./routes/musicRouter');
 
 var app = express();
+var favicon = require('serve-favicon');
+var path = require('path');
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon2.ico')));
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -17,7 +21,6 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
 const url = 'mongodb://localhost:27017/bookingshop';
 const connect = mongoose.connect(url);
@@ -33,6 +36,7 @@ connect.then(
 
 app.use('/', indexRouter);
 app.use('/bookings', musicRouter);
+app.use('/bookings/create', musicRouter);
 
 app.get('/about', (req, res) => {
   res.render('about', { title: 'About the Music Workshop' });

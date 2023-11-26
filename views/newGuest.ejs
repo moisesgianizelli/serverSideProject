@@ -1,52 +1,67 @@
 <!DOCTYPE html>
 <html>
-<script src="javascripts/script.js"></script>
-<% include partials/head %>
-  <div class="wrapper">
-    <h1>
-      <%= title %>
-    </h1>
 
-    <body>
-      <div class="form-container">
-        <form id="bookingForm" action="/bookings/create" method="post" onsubmit="return validateForm()">
+<head>
+  <% include partials/head %>
+    <!-- <script src="public/javascript/script.js"></script> -->
+</head>
+<div class="wrapper">
+  <h1>
+    <%= title %>
+  </h1>
 
-          <div class=" form-group">
-            <label for="name">Name</label>
-            <input type="text" class="form-input" id="name" name="name" required>
-          </div>
+  <body>
+    <div class="form-container">
+      <form id="bookingForm" action="/bookings/create" method="post" onsubmit="return validateForm()">
 
-          <div class="form-group">
-            <label for="description">Description</label>
-            <select type="text" class="form-input-drop" id="description" name="description" required>
-              <option value="teacher">Teacher</option>
-              <option value="student">Student</option>
-              <option value="instructor">Instructor</option>
-              <option value="evening">audience</option>
-            </select>
-          </div>
+        <div class=" form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-input" id="name" name="name" required>
+        </div>
 
-          <div class="form-group">
-            <label for="hourToAttend">Time</label>
-            <select class="form-input-drop" id="hourToAttend" name="hourToAttend" required>
-              <option value="morning">Morning</option>
-              <option value="afternoon">Afternoon</option>
-              <option value="evening">Evening</option>
-            </select>
-          </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <select type="text" class="form-input-drop" id="description" name="description" required>
+            <option value="teacher">Teacher</option>
+            <option value="student">Student</option>
+            <option value="instructor">Instructor</option>
+            <option value="evening">audience</option>
+          </select>
+        </div>
 
-          <div class="form-group">
-            <label for="description">Date</label>
-            <input type="date" class="form-input" id="date" name="date" required>
-          </div>
+        <div class="form-group">
+          <label for="hourToAttend">Time</label>
+          <select class="form-input-drop" id="hourToAttend" name="hourToAttend" required>
+            <option value="morning">Morning</option>
+            <option value="afternoon">Afternoon</option>
+            <option value="evening">Evening</option>
+          </select>
+        </div>
 
-          <button type="submit" class="form-button">Submit</button>
-        </form>
-      </div>
-    </body>
-  </div>
-  <% include partials/foot %>
+        <div class="form-group">
+          <label for="description">Date</label>
+          <input type="date" class="form-input" id="date" name="date" required>
+        </div>
+
+        <button type="submit" class="form-button">Submit</button>
+      </form>
+    </div>
+  </body>
+</div>
+<% include partials/foot %>
 
 </html>
 
-</html>
+<script>function validateForm() {
+    var selectedDate = new Date(document.getElementById('date').value);
+    var today = new Date();
+    selectedDate.setUTCHours(0, 0, 0, 0);
+    today.setUTCHours(0, 0, 0, 0);
+
+    if (selectedDate < today) {
+      alert('Selected date must be today or later.');
+      return false;
+    }
+    return true;
+  }
+</script>
