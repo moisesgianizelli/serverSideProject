@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-<!-- <script>
-  // Redirect to "/thanks" after a delay (e.g., 3 seconds)
-  setTimeout(() => {
-    window.location.href = '/thanks';
-  }, 3000); // Adjust the delay as needed
-</script> -->
-
 <head>
   <title>
     <%= title %>
@@ -15,11 +8,20 @@
   <% include partials/head %>
 </head>
 
+
+
 <body>
   <div class="wrapper">
     <h1>
       <%= title %>
     </h1>
+    <div class="search-container">
+      <form id="searchForm">
+        <label for="searchInput">Search:</label>
+        <input type="text" id="searchInput" name="searchInput" placeholder="Enter name or description">
+        <button type="button" class="btn-delete" onclick="searchGuestList()">Search</button>
+      </form>
+    </div>
     <div class="table-container">
       <table class="table table-inverse">
         <thead>
@@ -31,7 +33,6 @@
             <th>Control</th>
           </tr>
         </thead>
-
         <tbody>
           <% for (var i=0; i < bookinglist.length; i++) { %>
             <tr>
@@ -60,10 +61,35 @@
         </tbody>
       </table>
     </div>
-    <button class="btn-join-workshop"><a href="/bookings/report">Report</a></button>
+    <button class="form-button"><a href="/bookings/report">Report</a></button>
   </div>
 
   <% include partials/foot %>
 </body>
 
 </html>
+
+<script>
+  function searchGuestList() {
+    var input, filter, table, tbody, tr, td, i, txtValue;
+    input = document.getElementById("searchInput");
+    filter = input.value.toUpperCase();
+    table = document.querySelector(".table");
+    tbody = table.querySelector("tbody");
+    tr = tbody.getElementsByTagName("tr");
+
+    for (i = 0; i < tr.length; i++) {
+      tdName = tr[i].getElementsByTagName("td")[0];
+      tdDescription = tr[i].getElementsByTagName("td")[1];
+      if (tdName || tdDescription) {
+        txtValueName = tdName.textContent || tdName.innerText;
+        txtValueDescription = tdDescription.textContent || tdDescription.innerText;
+        if (txtValueName.toUpperCase().indexOf(filter) > -1 || txtValueDescription.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
+</script>

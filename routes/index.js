@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+
 const bookings = require('../models/guest');
 const getTotalBookings = async () => {
   const totalBookings = await bookings.countDocuments();
