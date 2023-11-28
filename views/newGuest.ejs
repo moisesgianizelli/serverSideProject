@@ -2,8 +2,10 @@
 <html>
 
 <head>
+  <title>
+    <%= title %>
+  </title>
   <% include partials/head %>
-    <!-- <script src="public/javascript/script.js"></script> -->
 </head>
 <div class="wrapper">
   <h1>
@@ -51,17 +53,3 @@
 <% include partials/foot %>
 
 </html>
-
-<script>function validateForm() {
-    var selectedDate = new Date(document.getElementById('date').value);
-    var today = new Date();
-    selectedDate.setUTCHours(0, 0, 0, 0);
-    today.setUTCHours(0, 0, 0, 0);
-
-    if (selectedDate < today) {
-      alert('Selected date must be today or later.');
-      return false;
-    }
-    return true;
-  }
-</script>

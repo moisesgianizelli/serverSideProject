@@ -1,10 +1,8 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
-
 const bookings = require('../models/guest');
-
+const path = require('path');
 const musicRouter = express.Router();
+musicRouter.use(express.static(path.join(__dirname, '../public')));
 
 musicRouter
   .route('/')
