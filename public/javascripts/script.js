@@ -44,8 +44,29 @@ function validateForm() {
   return true;
 }
 
-function confirmDelete() {
-  var confirmation = window.confirm(
-    'Are you sure you want to delete this booking?',
-  );
+function searchGuestList() {
+  var input, filter, table, tbody, tr, td, i, txtValue;
+  input = document.getElementById('searchInput');
+  filter = input.value.toUpperCase();
+  table = document.querySelector('.table');
+  tbody = table.querySelector('tbody');
+  tr = tbody.getElementsByTagName('tr');
+
+  for (i = 0; i < tr.length; i++) {
+    tdName = tr[i].getElementsByTagName('td')[0];
+    tdDescription = tr[i].getElementsByTagName('td')[1];
+    if (tdName || tdDescription) {
+      txtValueName = tdName.textContent || tdName.innerText;
+      txtValueDescription =
+        tdDescription.textContent || tdDescription.innerText;
+      if (
+        txtValueName.toUpperCase().indexOf(filter) > -1 ||
+        txtValueDescription.toUpperCase().indexOf(filter) > -1
+      ) {
+        tr[i].style.display = '';
+      } else {
+        tr[i].style.display = 'none';
+      }
+    }
+  }
 }
